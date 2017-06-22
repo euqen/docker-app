@@ -1,10 +1,13 @@
-FROM node:argon
+FROM node
 
 # Create app directory
 RUN mkdir -p /usr/src/app
+
+COPY . /usr/src/app/
+
 WORKDIR /usr/src/app
 
-COPY app.js /usr/src/app/
+RUN npm install
 
 EXPOSE 3000
 
